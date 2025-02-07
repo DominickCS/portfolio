@@ -23,9 +23,15 @@
     }
 
     function HomePage() {
+      const taskList = [`Ride my Bike`, `Code my website`, `Go Grocery Shopping`];
       return (
       <div>
           <Header title="DominickCS" subtitle="A portfolio created with NextJS" />
+          <ul>
+            {taskList.map((task) => (
+              <li key={task}>{task}</li>
+            ))}
+          </ul>
       </div>
       )
     }
