@@ -1,1 +1,13 @@
 /* Resume Stylesheet */
+
+#pdfdoc {
+  gap: 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.react-pdf__Page {
+  margin: 0;
+  padding: 0;
+}
