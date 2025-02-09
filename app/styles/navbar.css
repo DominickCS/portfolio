@@ -1,0 +1,21 @@
+/* Navbar Stylesheet */   
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: black;
+}
+
+.navbar-center ul{
+  display: flex;
+}
+
+.navbar-center li{
+  margin: 8px;
+}
+
+.navbar a {
+  color: white;
+}
+
