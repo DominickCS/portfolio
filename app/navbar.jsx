@@ -5,6 +5,7 @@ import './styles/navbar.css';
 import AboutMe from './aboutme.jsx';
 import Header from './header.jsx';
 import Projects from './projects.jsx';
+import Resume from './resume.jsx';
 
 const Navbar = () => {
   return (
@@ -40,6 +41,7 @@ const Navbar = () => {
         <Route path="/" element={<Header title="Welcome to my Portfolio" subtitle="I am a highly passionate front-end web developer!"/>} />
         <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
   </Router>
   );
