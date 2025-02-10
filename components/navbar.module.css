@@ -7,11 +7,11 @@
   background-color: black;
 }
 
-.navbar-center ul{
+.navbarcenter ul{
   display: flex;
 }
 
-.navbar-center li{
+.navbarcenter li{
   margin: 8px;
 }
 

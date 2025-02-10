@@ -1,16 +1,16 @@
 /* Header Stylesheet */
 
-.intro h1, h4{
+.intro .title, .subtitle{
   text-align: center;
 }
 
-#pfp, img{
+.pfpdiv, .pfpimg{
   display: flex;
   justify-content: center;
   border-radius: 48px
 }
 
-img {
+.pfpimg {
   width: 33%;
   box-shadow: 10px 8px 8px black;
 }
