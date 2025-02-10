@@ -1,0 +1,13 @@
+.contactContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactForm input{
+    display: block;
+}
+
+.contactForm button{
+  display: block;
+}
