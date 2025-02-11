@@ -16,7 +16,7 @@ const ContactMe: FC = () => {
   const { register, handleSubmit } = useForm<FormData>();
   
   function onSubmit(data: FormData) {
-    console.log(data);
+//    console.log(data);
     sendEmail(data);
   }
 

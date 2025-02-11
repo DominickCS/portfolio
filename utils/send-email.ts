@@ -1,17 +1,20 @@
 import { FormData } from '../pages/contactme.tsx';
 
-export function sendEmail(data: FormData) {
-  const apiEndpoint = '../pages/api/email/';
+export async function sendEmail(data: FormData) {
+  const apiEndpoint = await fetch('/api/email', {
 
-  fetch(apiEndpoint, {
     method: 'POST',
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
-    .then((res) => res.json())
-    .then((response) => {
-      alert(response.message);
-    })
-    .catch((err) => {
-      alert(err);
-    });
+
+    const text = await apiEndpoint.text();
+
+  //  .then((res) => res.json())
+    //.then((response) => {
+      //alert(response.message);
+   // })
+    //.catch((err) => {
+     // alert(err);
+   // });
 }
