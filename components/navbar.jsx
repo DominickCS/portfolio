@@ -6,7 +6,7 @@ import AboutMe from '../pages/aboutme.jsx';
 import Header from './header.jsx';
 import Projects from '../pages/projects.jsx';
 import Resume from '../pages/resume.jsx';
-import ContactMe from '../pages/contactme.jsx';
+import ContactMe from '../pages/contactme.tsx';
 
 const Navbar = () => {
   return (
