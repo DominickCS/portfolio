@@ -1,32 +1,8 @@
-footer {
-  font-weight: bold;
-  font-size: 12px;
-  text-align: center;
-  vertical-align: bottom;
-}
-
 body {
-  background-color: blue;
+  background-color: #0a0a0a;
   color: white;
 }
 
-h1,
-h4 {
-  text-align: center;
-}
-
-#pfp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#pfp img {
-  width: 33%;
-  border-radius: 48px;
-}
-
-img {
-  width: 33%;
-  box-shadow: 10px 8px 8px black;
+a {
+  text-decoration: none;
 }

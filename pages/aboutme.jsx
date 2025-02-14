@@ -12,6 +12,11 @@ function AboutMe() {
           Hello, I'm Dominick, a Junior Software Engineering student attending
           Western Governors University.
         </p>
+        <p>
+          I have a passion for all things computers. Ever since I was a kid I
+          have been trying to understand the inner mechanics of the world around
+          me.
+        </p>
       </section>
     </div>
   );

@@ -1,21 +1,23 @@
-/* Navbar Stylesheet */   
+/* Navbar Stylesheet */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
   background-color: black;
+  border-bottom: solid white 1px;
 }
 
-.navbarcenter ul{
+.navbarcenter ul {
   display: flex;
+  margin: 0;
 }
 
-.navbarcenter li{
-  margin: 8px;
+.navbarcenter li {
+  list-style-type: none;
+  padding: 16px;
 }
 
 .navbar a {
   color: white;
 }
-

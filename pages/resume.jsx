@@ -23,7 +23,7 @@ function Resume() {
             <Page
               key={index}
               pageNumber={index + 1}
-              scale={1.45}
+              scale={1.5}
               renderMode="canvas"
               renderTextLayer={false}
               renderAnnotationLayer={false}
