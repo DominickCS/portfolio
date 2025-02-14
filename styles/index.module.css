@@ -1,0 +1,51 @@
+/* Index Stylesheet */
+
+.cardContainer {
+  max-width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.containerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardOne,
+.cardTwo,
+.cardThree {
+  margin-left: 8px;
+  margin-right: 8px;
+  max-width: 200px;
+  max-height: 100px;
+  padding: 24px;
+  border: solid black 2px;
+  box-shadow: 6px 8px 8px black;
+  border-radius: 12px;
+}
+
+.cardOne img {
+  display: block;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.cardTwo img {
+  display: block;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.cardThree img {
+  display: block;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
