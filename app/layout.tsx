@@ -13,12 +13,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const year = new Date().getFullYear()
   return (
     <html lang="en">
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavigationBar />
           {children}
+          <footer className="text-center text-blue-500 font-extrabold py-12">
+            Copyright © {year} DominickCS, All rights reserved.
+          </footer>
         </ThemeProvider>
       </body>
     </html>

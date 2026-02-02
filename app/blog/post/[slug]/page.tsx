@@ -36,7 +36,7 @@ export default function BlogPost() {
   }
 
   return (
-    <article className="mx-auto pb-12">
+    <article className="mx-auto">
       {post.feature_image && (
         <div className="relative w-full h-150 mb-12 overflow-hidden">
           <Image
@@ -79,8 +79,6 @@ export default function BlogPost() {
 
       <div className="
         mx-auto
-        max-w-xs
-        sm:max-w-3xl
         px-8
         prose dark:prose-invert 
         prose-slate 
@@ -94,7 +92,7 @@ export default function BlogPost() {
         prose-a:hover:text-blue-500
         prose-figure:flex prose-figure:flex-col
         prose-figcaption:text-center
-        prose-img:shadow-2xl/30 prose-img:rounded-xl prose-img:my-4 prose-img:hover:scale-95 prose-img:duration-300 prose-img:border-base prose-img:border-4
+        prose-img:shadow-2xl/30 prose-img:shadow-accent-foreground prose-img:rounded-b-full prose-img:my-8 prose-img:hover:scale-95 prose-img:duration-300 prose-img:border-accent-foreground prose-img:border-8
         prose-strong:font-extrabold
         " dangerouslySetInnerHTML={{ __html: post.html }}
       />

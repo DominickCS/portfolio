@@ -8,12 +8,10 @@ import Link from "next/link"
 
 export default async function BlogPage() {
   const posts = await FetchLatestPosts()
-
-  console.log(posts)
   if (posts) {
     return (
-      <div className="mx-8">
-        <div className="max-w-fit mx-auto mt-8">
+      <div className="mx-8 min-h-screen">
+        <div className="max-w-fit mx-auto my-8">
           <form className="flex">
             <Label htmlFor="search" className="font-light mx-2 dark:invert"><Image src={SearchIcon} alt="A magnifying glass" width={28} /> </Label>
             <Input type="text" name="search" id="search" className="bg-inherit" placeholder="Search posts, and tags" />
@@ -24,7 +22,7 @@ export default async function BlogPage() {
             const publishDate = new Date(post.created_at).toLocaleDateString() + " at " + new Date(post.created_at).toLocaleTimeString();
             return (
               <Link key={post.id} href={`/blog/post/${post.slug}`}>
-                <Card className="max-h-96 hover:max-h-full overflow-hidden my-8 shadow-xl/10 shadow-black hover:scale-95 hover:bg-accent duration-300">
+                <Card className="max-h-96 hover:max-h-full overflow-hidden shadow-2xl/20 shadow-accent-foreground hover:scale-95 hover:bg-accent duration-300">
                   <CardHeader>
                     <div className="relative w-full h-60 my-2">
                       <Image
