@@ -118,14 +118,11 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border/20
   }
   body {
     @apply bg-background text-foreground;
-  }
-  img {
-    @apply shadow-black/20 shadow-lg;
-  }
+  };
 }
 
 .kg-card {

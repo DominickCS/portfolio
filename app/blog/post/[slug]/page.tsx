@@ -40,7 +40,7 @@ export default function BlogPost() {
       {post.feature_image && (
         <div className="relative w-full h-150 mb-12 overflow-hidden">
           <Image
-            className="hover:grayscale duration-500 object-cover"
+            className="hover:grayscale duration-500 object-cover border-b-4 border-border"
             src={post.feature_image}
             fill
             alt={post.feature_image_alt || post.title}
@@ -78,9 +78,10 @@ export default function BlogPost() {
       </header>
 
       <div className="
-        max-w-4xl
         mx-auto
-        px-16
+        max-w-xs
+        sm:max-w-3xl
+        px-8
         prose dark:prose-invert 
         prose-slate 
         prose-h1:text-6xl
@@ -91,6 +92,9 @@ export default function BlogPost() {
         prose-li:leading-relaxed prose-li:py-2
         prose-em:italic prose-em:font-semibold prose-em:tracking-tight
         prose-a:hover:text-blue-500
+        prose-figure:flex prose-figure:flex-col
+        prose-figcaption:text-center
+        prose-img:shadow-2xl/30 prose-img:rounded-xl prose-img:my-4 prose-img:hover:scale-95 prose-img:duration-300 prose-img:border-base prose-img:border-4
         prose-strong:font-extrabold
         " dangerouslySetInnerHTML={{ __html: post.html }}
       />
