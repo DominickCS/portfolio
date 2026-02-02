@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,35 +128,6 @@
   }
 }
 
-.prose {
-  @apply text-gray-800 leading-10;
-}
-
-.prose blockquote {
-  @apply border-l-4 border-gray-300 italic font-normal;
-}
-
-.prose a {
-  @apply text-blue-600 hover:text-blue-800 no-underline hover:underline;
-}
-
-.prose img {
-  @apply rounded-lg shadow-md;
-}
-
-.prose figcaption {
-  @apply text-center text-sm text-gray-600 mt-2;
-}
-
-.prose hr {
-  @apply my-8 border-gray-300;
-}
-
-/* Ghost callout cards */
-.kg-callout-card {
-  @apply flex gap-4 p-4 rounded-lg border border-gray-200 bg-gray-50;
-}
-
-.kg-callout-emoji {
-  @apply text-2xl;
+.kg-card {
+  display: flex;
 }
