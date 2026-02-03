@@ -125,6 +125,10 @@
   };
 }
 
-.kg-card {
-  display: flex;
+.kg-card,
+.kg-callout-card,
+.kg-callout-card-white {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }

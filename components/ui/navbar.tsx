@@ -15,7 +15,7 @@ export default function NavigationBar() {
   }
 
   return (
-    <div className="[&>div]:md:py-4 [&>div]:py-2 md:py-8 border-b-4 border-accent-foreground/5 shadow-lg/20 overflow-hidden sticky top-0 z-1 bg-inherit/20 backdrop-blur-xl backdrop-grayscale md:flex text-center justify-between items-center">
+    <div className="[&>div]:md:py-4 [&>div]:py-2 md:py-4 border-b-4 border-accent-foreground/5 shadow-lg/20 overflow-hidden sticky top-0 z-1 bg-inherit/20 backdrop-blur-xl backdrop-grayscale md:flex text-center justify-between items-center">
       <div className="mx-8">
         <h1 className="text-blue-500 md:text-3xl font-extrabold text-shadow-sm hover:text-blue-400 transition-colors hover:cursor-default">DominickCS_</h1>
       </div>
