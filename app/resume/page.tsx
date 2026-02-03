@@ -1,7 +1,22 @@
-export default function ResumePage() {
+import PDFParser from "@/actions/PDFParser"
+import Image from "next/image";
+
+export default async function ResumePage() {
+  const resume = await PDFParser();
   return (
-    <div className="min-h-screen">
-      WIP - ResumePage
+    <div className="container mx-auto p-4">
+      {resume.pages.map((page) => (
+        <div key={page.pageNumber} className="my-8">
+          <Image
+            src={page.dataUrl}
+            alt={`Resume page ${page.pageNumber}`}
+            width={page.width}
+            height={page.height}
+            className="border-border border-4 shadow-2xl shadow-accent-foreground/50 mx-auto"
+            unoptimized
+          />
+        </div>
+      ))}
     </div>
   )
 }
