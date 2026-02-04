@@ -4,9 +4,9 @@ import Image from "next/image";
 export default async function ResumePage() {
   const resume = await PDFParser();
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto px-4 pt-4">
       {resume.pages.map((page) => (
-        <div key={page.pageNumber} className="my-8">
+        <div key={page.pageNumber} className="last:mt-8">
           <Image
             src={page.dataUrl}
             alt={`Resume page ${page.pageNumber}`}

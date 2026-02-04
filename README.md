@@ -1,11 +1,9 @@
 # portfolio
 
-### WIP
+My Developer portfolio
 
-- Home Page
-- Resume Page
-- Projects Page
-- Contact Page
+## TODO
+
 - Blog Page
 - - Search Function
-
+- - Tag Browse Function

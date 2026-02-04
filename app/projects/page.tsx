@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function ProjectsPage() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 px-16 py-8 text-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 pt-4 text-center">
       <Card className="text-blue-500 hover:scale-95 duration-300 shadow-2xl shadow-accent-foreground/20 border-accent border-4">
         <CardHeader>
-          <CardTitle>WeddingInfo</CardTitle>
+          <CardTitle className="text-2xl">WeddingInfo</CardTitle>
           <CardDescription>A full-stack RSVP page for my upcoming wedding.</CardDescription>
         </CardHeader>
         <CardContent>
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
       </Card>
       <Card className="text-blue-500 hover:scale-95 duration-300 shadow-2xl shadow-accent-foreground/20 border-accent border-4">
         <CardHeader>
-          <CardTitle>Wellness Tracker</CardTitle>
+          <CardTitle className="text-2xl">Wellness Tracker</CardTitle>
           <CardDescription>A full-stack health and wellness tracking application.</CardDescription>
         </CardHeader>
         <CardContent>
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
       </Card>
       <Card className="text-blue-500 hover:scale-95 duration-300 shadow-2xl shadow-accent-foreground/20 border-accent border-4">
         <CardHeader>
-          <CardTitle>Blog</CardTitle>
+          <CardTitle className="text-2xl">BlogCMS</CardTitle>
           <CardDescription className="font-extralight">(IN PROGRESS)</CardDescription>
           <CardDescription>A full-stack blog Content Management System (CMS).</CardDescription>
         </CardHeader>
@@ -70,11 +70,11 @@ export default function ProjectsPage() {
       </Card>
       <Card className="text-blue-500 hover:scale-95 duration-300 shadow-2xl shadow-accent-foreground/20 border-accent border-4">
         <CardHeader>
-          <CardTitle>Coming Soon...</CardTitle>
+          <CardTitle className="text-xl">Coming Soon...</CardTitle>
         </CardHeader>
         <CardContent>
           <CardDescription>
-            I am eager to create new and useful software!
+            I am consistently striving to create new and useful software!
           </CardDescription>
         </CardContent>
       </Card>
