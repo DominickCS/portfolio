@@ -26,7 +26,6 @@ export default function NavigationBar() {
           <Link className="mx-2" href={'/blog'}>Blog</Link>
           <Link className="mx-2" href={'/resume'}>Resume</Link>
           <Link className="mx-2" href={'/projects'}>Projects</Link>
-          <Link className="mx-2" href={'/contact'}>Contact</Link>
         </nav>
       </div>
     </div>

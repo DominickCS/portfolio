@@ -1,19 +1,51 @@
+'use client'
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Me from "@/public/me.jpg"
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import MessageHandler from "@/actions/MessageHandler";
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    subject: "",
+    message: ""
+  })
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+
+    setFormData({
+      subject: '',
+      message: ''
+    })
+
+    await MessageHandler(formData.subject, formData.message)
+  }
+
+
   return (
     <div className="min-h-screen sm:max-w-2xl md:max-w-5xl mx-auto pt-8 ">
       <Card className="shadow-2xl/10 shadow-accent-foreground mx-8">
         <CardHeader className="text-center text-blue-500 md:text-4xl text-2xl text-shadow-sm">
-          <div className="relative md:h-220 md:w-180 h-95 w-70 sm:w-105 sm:h-130 mx-auto my-2">
+          <div className="relative md:h-220 md:w-180 h-95 w-70 sm:w-125 sm:h-160 mx-auto my-2">
             <Image src={Me} className="grayscale duration-300 border-border/70 border-24 rounded-t-full shadow-2xl/5 shadow-accent-foreground" fill objectFit="cover" alt="A photo of me." />
           </div>
           <CardTitle className="leading-relaxed my-4 text-lg sm:text-2xl"><span className="mx-2">Hey! 👋</span>I'm <span className="font-extrabold">Dominick</span>! I create unique web experiences using clean <span className="font-light underline italic">AI-FREE</span> code 🚀</CardTitle>
           <CardDescription className="border-t-4 pb-8 border-b-4">
             <h1 className="text-3xl my-8 font-extrabold text-blue-500">Skills</h1>
-            <div className="grid md:grid-cols-4 grid-cols-2 gap-8 [&>div]:hover:scale-95 [&>div]:border-border [&>div]:border-4 [&>div]:hover:shadow-2xl/10 [&>div]:hover:shadow-accent-foreground [&>div]:duration-300">
+            <div className="grid md:grid-cols-4 grid-cols-2 gap-8 mb-8 [&>div]:hover:scale-95 [&>div]:border-border [&>div]:border-4 [&>div]:hover:shadow-2xl/10 [&>div]:hover:shadow-accent-foreground [&>div]:duration-300">
               <Card>
                 <CardHeader>
                   <CardTitle className="text-xs sm:text-xl  text-blue-500 font-extrabold underline">FRONTEND</CardTitle>
@@ -70,6 +102,18 @@ export default function Home() {
                   </ul>
                 </CardDescription>
               </Card>
+            </div>
+            <div>
+              <h1 className="text-3xl text-blue-500 font-extrabold">Get in touch!</h1>
+              <div className="px-8">
+                <form onSubmit={handleSubmit}>
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input required onChange={handleChange} value={formData.subject} className="my-2" type="text" name="subject" id="subject" />
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea required onChange={handleChange} className="my-2" value={formData.message} name="message" id="message" placeholder="Type your message here." rows={20} />
+                  <Input type="submit" value={"Send Message"} className="hover:bg-blue-500 hover:text-white duration-300 transition-all mt-4 dark:hover:bg-blue-500 hover:font-extrabold" />
+                </form>
+              </div>
             </div>
           </CardDescription>
         </CardHeader>
