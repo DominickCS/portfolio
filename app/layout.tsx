@@ -4,9 +4,15 @@ import NavigationBar from "@/components/ui/navbar";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
-  title: "Dominick Smith - Developer Portfolio",
-  description: "Hello! Nice to meet you!",
-};
+  title: {
+    default: "DominickCS",
+    template: "%s | DominickCS",  // child pages just set the prefix
+  },
+  description: "Platform engineer, full-stack developer, security researcher.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+}
 
 export default function RootLayout({
   children,
