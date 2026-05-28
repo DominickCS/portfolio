@@ -33,7 +33,7 @@ const skills = [
   },
   {
     category: "Certifications",
-    items: ["B.S. Software Engineering — WGU", "CompTIA Security+ (in progress)", "AWS CCP (in progress)"],
+    items: ["B.S. Software Engineering @ WGU", "CompTIA Project+", "CompTIA Security+ (in progress)", "AWS CCP (in progress)"],
   },
 ]
 
@@ -94,13 +94,13 @@ export default function Home() {
       <div className="max-w-3xl mx-auto space-y-16">
 
         {/* ── Hero ──────────────────────────────────────────────────────── */}
-        <section className="flex flex-col sm:flex-row gap-8 items-start">
-          <div className="relative shrink-0 w-36 h-52 sm:w-44 sm:h-64 rounded-xl overflow-hidden border-2 border-border/60 hover:border-blue-500/50 transition-colors duration-300">
+        <section className="flex flex-col sm:flex-row gap-8 items-center sm:items-start">
+          <div className="relative shrink-0 w-44 h-62 sm:w-66 sm:h-84 rounded-xl overflow-hidden border-2 border-border/60 hover:border-blue-500/50 transition-colors duration-300">
             <Image
               src={Me}
               alt="Dominick Smith"
               fill
-              className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+              className="object-cover object-center sm:object-cover sm:object-top grayscale hover:grayscale-0 transition-all duration-500"
             />
           </div>
 
