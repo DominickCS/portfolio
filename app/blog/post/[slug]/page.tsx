@@ -25,15 +25,15 @@ export default function BlogPost() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl">Loading...</div>
+        <p className="text-3xl">Loading post...</p>
       </div>
     )
   }
 
-  if (!post) {
+  if (post?.id == undefined) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl">Post not found</div>
+        <p className="text-3xl font-extralight">Post not found</p>
       </div>
     )
   }

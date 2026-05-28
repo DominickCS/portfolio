@@ -1,5 +1,5 @@
 'use server'
-import GhostContentAPI, { PostOrPage, PostsOrPages, Tag } from "@tryghost/content-api";
+import GhostContentAPI, { PostOrPage, PostsOrPages } from "@tryghost/content-api";
 
 const api = new GhostContentAPI({
   url: `${process.env.GHOST_API_URL}`,
@@ -9,7 +9,7 @@ const api = new GhostContentAPI({
 
 export async function FetchLatestPosts(): Promise<PostsOrPages | null> {
   try {
-    return await api.posts.browse({ limit: 100, include: ["tags", "count.posts"] })
+    return await api.posts.browse({ limit: 100, include: ["tags"] })
   } catch (error: any) {
     return error
   }
@@ -29,8 +29,20 @@ export async function FetchByTag(tag: string): Promise<PostsOrPages | null> {
   try {
     return await api.posts.browse({
       limit: 100,
-      include: ["count.posts"],
+      include: ["tags"],
       filter: `tag:${tag}`
+    })
+  } catch (error: any) {
+    return error
+  }
+}
+
+export async function SearchPosts(query: string): Promise<PostsOrPages | null> {
+  try {
+    return await api.posts.browse({
+      limit: 100,
+      include: ["tags"],
+      filter: `title:~'${query}',tag:'${query}'`
     })
   } catch (error: any) {
     return error

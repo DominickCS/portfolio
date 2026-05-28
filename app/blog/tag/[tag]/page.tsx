@@ -1,20 +1,22 @@
-'use server'
-import { SearchPosts } from "@/actions/BlogActions"
+import Link from "next/link"
+import SearchForm from "../../components/SearchForm"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
-import Link from "next/link"
-import SearchForm from "@/app/blog/components/SearchForm"
+import { FetchByTag } from "@/actions/BlogActions"
 
-
-export default async function SearchQueryResultsPage({ searchParams }: { searchParams: Promise<{ query: string }> }) {
-  const { query } = await searchParams
-  const results = await SearchPosts(query)
+export default async function TagPage({
+  params
+}: {
+  params: Promise<{ tag: string }>
+}) {
+  const { tag } = await params
+  const results = await FetchByTag(tag)
 
   return (
     <div className="mx-4 min-h-screen">
       <SearchForm />
       <div className="my-4">
-        <p>{results?.length} {results?.length == 1 ? "Post" : "Posts"} found for "{query}"</p>
+        <p>{results?.length} {results?.length == 1 ? "Post" : "Posts"} found under #{tag}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mx-auto">
         {results?.map((post) => {
