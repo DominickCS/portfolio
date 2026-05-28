@@ -1,13 +1,31 @@
-import { FetchLatestPosts } from "@/actions/BlogActions"
+'use client'
+import { FetchByTag, FetchLatestPosts } from "@/actions/BlogActions"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import SearchIcon from "@/public/search.svg"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
-export default async function BlogPage() {
-  const posts = await FetchLatestPosts()
+export default function BlogPage() {
+  const [posts, setPosts] = useState([])
+  const [searchBox, setSearchBox] = useState("")
+
+  useEffect(() => {
+    const fetchAllPosts = async () => {
+      const response = await FetchLatestPosts()
+      setPosts(response)
+      console.log(response)
+    }
+    fetchAllPosts()
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchBox(prev => ({ ...prev, value }));
+    console.log(value)
+  };
 
   if (posts) {
     return (
@@ -17,7 +35,7 @@ export default async function BlogPage() {
             <Label htmlFor="search" className="font-light mx-2 dark:invert">
               <Image src={SearchIcon} alt="A magnifying glass" width={28} />
             </Label>
-            <Input type="text" name="search" id="search" className="bg-inherit" placeholder="Search posts, and tags" />
+            <Input value={searchBox.valueOf()} onChange={handleChange} type="text" name="input" id="input" className="bg-inherit" placeholder="Search posts, and tags" />
           </form>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mx-auto">

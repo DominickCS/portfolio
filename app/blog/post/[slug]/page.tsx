@@ -59,7 +59,7 @@ export default function BlogPost() {
       )}
 
       <header className="mb-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
+        <h1 className="text-4xl md:text-5xl w-full md:max-w-2xl max-w-xl px-8 mx-auto font-bold mb-6">{post.title}</h1>
 
         {post.custom_excerpt && (
           <p className="text-xl text-gray-600 mb-6 italic">
@@ -88,9 +88,11 @@ export default function BlogPost() {
         <div className="
         mx-auto
         px-8
+        max-w-2xl
         prose dark:prose-invert 
         prose-slate 
         prose-h1:text-6xl
+        prose-h1:font-extrabold
         prose-h2:text-4xl
         prose-h3:text-2xl
         prose-h4:text-lg
